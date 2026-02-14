@@ -1,0 +1,171 @@
+>>> Running bench_trip_m-4-100000-10
+Waiting for bench_trip_m-4-100000-10 to finish...
+Using statistical security parameter 40
+ m  =  4
+n = 25000
+d = 10
+Starting timer 1 at 0 (0 MB, 0 rounds) after 2.5441e-05
+Read from remote host ec2-54-184-63-122.us-west-2.compute.amazonaws.com: Connection reset by peer
+client_loop: send disconnect: Broken pipe
+Running secrets generation because no suitable material from a previous run was found (cannot read from Player-Data/LowGear-Secrets-40-a0c1c95d98064db9adf3a5cab9028cbc238daeb0-P0-4)
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Key generation took 6681.1 seconds
+MAC key generation took 271.502 seconds
+Stopped timer 1 at 7040.28 (173.509 MB, 866 rounds)
+Starting timer 10 at 0 (0 MB, 0 rounds) after 1.676e-06
+Stopped timer 10 at 79.6476 (162.485 MB, 816 rounds)
+Starting timer 20 at 0 (0 MB, 0 rounds) after 3.449e-06
+Stopped timer 20 at 161.536 (956.679 MB, 4632 rounds)
+Starting timer 30 at 0 (0 MB, 0 rounds) after 1.816e-06
+Stopped timer 30 at 0.139201 (0.00132 MB, 10 rounds)
+Starting timer 40 at 0 (0 MB, 0 rounds) after 1.571e-06
+Iteration 0: a = 0, b = 1, m = 0.5
+Iteration 1: a = 0, b = 0.499985, m = 0.249985
+Iteration 2: a = 0, b = 0.249969, m = 0.124985
+Iteration 3: a = 0, b = 0.124969, m = 0.0624847
+Iteration 4: a = 0, b = 0.0624695, m = 0.0312347
+Iteration 5: a = 0, b = 0.0312195, m = 0.0156097
+Iteration 6: a = 0, b = 0.0155945, m = 0.00779724
+Iteration 7: a = 0, b = 0.00778198, m = 0.00389099
+Iteration 8: a = 0, b = 0.00387573, m = 0.00193787
+Iteration 9: a = 0.00195313, b = 0.00387573, m = 0.00291443
+Iteration 10: a = 0.00292969, b = 0.00387573, m = 0.00340271
+Iteration 11: a = 0.00292969, b = 0.00338745, m = 0.00315857
+Iteration 12: a = 0.00317383, b = 0.00338745, m = 0.00328064
+Iteration 13: a = 0.0032959, b = 0.00338745, m = 0.00334167
+Iteration 14: a = 0.00335693, b = 0.00338745, m = 0.00337219
+Median found: 0.00335693
+Stopped timer 40 at 314.865 (1000.04 MB, 18090 rounds)
+Significant amount of unused triples of SPDZ gfp distorting the benchmark. This protocol has a large minimum batch size, which makes this unavoidable for small programs.
+The following benchmarks are including preprocessing (offline phase).
+Time = 7596.48 seconds
+Time1 = 7040.28 seconds (173.509 MB, 866 rounds)
+Time10 = 79.6476 seconds (162.485 MB, 816 rounds)
+Time20 = 161.536 seconds (956.679 MB, 4632 rounds)
+Time30 = 0.139201 seconds (0.00132 MB, 10 rounds)
+Time40 = 314.865 seconds (1000.04 MB, 18090 rounds)
+Data sent = 2292.71 MB in ~24415 rounds (party 0 only; use '-v' for more details)
+Global data sent = 8915.35 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+        program.use_edabit(True)
+ Done: bench_trip_m-4-100000-10
+
+>>> Running bench_trip_m-6-100000-10
+Waiting for bench_trip_m-6-100000-10 to finish...
+Using statistical security parameter 40
+ m  =  6
+n = 16666
+d = 10
+Starting timer 1 at 0 (0 MB, 0 rounds) after 1.7485e-05
+Running secrets generation because no suitable material from a previous run was found (cannot read from Player-Data/LowGear-Secrets-40-a0c1c95d98064db9adf3a5cab9028cbc238daeb0-P0-6)
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Key generation took 12936.4 seconds
+MAC key generation took 390.46 seconds
+Stopped timer 1 at 13453.4 (202.422 MB, 1236 rounds)
+Starting timer 10 at 0 (0 MB, 0 rounds) after 1.751e-06
+Stopped timer 10 at 102.319 (170.957 MB, 1036 rounds)
+Starting timer 20 at 0 (0 MB, 0 rounds) after 4.033e-06
+Stopped timer 20 at 222.354 (1607.01 MB, 8428 rounds)
+Starting timer 30 at 0 (0 MB, 0 rounds) after 1.988e-06
+Stopped timer 30 at 0.14015 (0.0022 MB, 14 rounds)
+Starting timer 40 at 0 (0 MB, 0 rounds) after 1.467e-06
+Iteration 0: a = 0, b = 1, m = 0.5
+Iteration 1: a = 0, b = 0.499985, m = 0.249985
+Iteration 2: a = 0, b = 0.249969, m = 0.124985
+Iteration 3: a = 0, b = 0.124969, m = 0.0624847
+Iteration 4: a = 0, b = 0.0624695, m = 0.0312347
+Iteration 5: a = 0, b = 0.0312195, m = 0.0156097
+Iteration 6: a = 0, b = 0.0155945, m = 0.00779724
+Iteration 7: a = 0, b = 0.00778198, m = 0.00389099
+Iteration 8: a = 0.00390625, b = 0.00778198, m = 0.00584412
+Iteration 9: a = 0.00390625, b = 0.00582886, m = 0.00486755
+Iteration 10: a = 0.00488281, b = 0.00582886, m = 0.00535583
+Iteration 11: a = 0.00488281, b = 0.00534058, m = 0.00511169
+Iteration 12: a = 0.00488281, b = 0.00509644, m = 0.00498962
+Iteration 13: a = 0.00500488, b = 0.00509644, m = 0.00505066
+Iteration 14: a = 0.00500488, b = 0.0050354, m = 0.00502014
+Median found: 0.0050354
+Stopped timer 40 at 378.833 (1656.22 MB, 29008 rounds)
+Significant amount of unused triples of SPDZ gfp distorting the benchmark. This protocol has a large minimum batch size, which makes this unavoidable for small programs.
+The following benchmarks are including preprocessing (offline phase).
+Time = 14157.1 seconds
+Time1 = 13453.4 seconds (202.422 MB, 1236 rounds)
+Time10 = 102.319 seconds (170.957 MB, 1036 rounds)
+Time20 = 222.354 seconds (1607.01 MB, 8428 rounds)
+Time30 = 0.14015 seconds (0.0022 MB, 14 rounds)
+Time40 = 378.833 seconds (1656.22 MB, 29008 rounds)
+Data sent = 3636.61 MB in ~39723 rounds (party 0 only; use '-v' for more details)
+Global data sent = 20891.5 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+        program.use_edabit(True)
+ Done: bench_trip_m-6-100000-10
+
+>>> Running bench_trip_m-8-100000-10
+Waiting for bench_trip_m-8-100000-10 to finish...
+Using statistical security parameter 40
+ m  =  8
+n = 12500
+d = 10
+Starting timer 1 at 0 (0 MB, 0 rounds) after 1.7627e-05
+Running secrets generation because no suitable material from a previous run was found (cannot read from Player-Data/LowGear-Secrets-40-a0c1c95d98064db9adf3a5cab9028cbc238daeb0-P0-8)
+Generate secret key by binomial
+Generate secret key by binomial
+ssh: connect to host ec2-54-184-63-122.us-west-2.compute.amazonaws.com port 22: No route to host
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Generate secret key by binomial
+Key generation took 23493.9 seconds
+MAC key generation took 512.985 seconds
+Stopped timer 1 at 24172 (212.565 MB, 1558 rounds)
+Starting timer 10 at 0 (0 MB, 0 rounds) after 1.854e-06
+Stopped timer 10 at 138.487 (189.639 MB, 1392 rounds)
+Starting timer 20 at 0 (0 MB, 0 rounds) after 3.734e-06
+Stopped timer 20 at 589.412 (4464.05 MB, 21460 rounds)
+Starting timer 30 at 0 (0 MB, 0 rounds) after 1.972e-06
+Stopped timer 30 at 0.139922 (0.00308 MB, 18 rounds)
+Starting timer 40 at 0 (0 MB, 0 rounds) after 1.46e-06
+Iteration 0: a = 0, b = 1, m = 0.5
+Iteration 1: a = 0, b = 0.499985, m = 0.249985
+Iteration 2: a = 0, b = 0.249969, m = 0.124985
+Iteration 3: a = 0, b = 0.124969, m = 0.0624847
+Iteration 4: a = 0, b = 0.0624695, m = 0.0312347
+Iteration 5: a = 0, b = 0.0312195, m = 0.0156097
+Iteration 6: a = 0, b = 0.0155945, m = 0.00779724
+Iteration 7: a = 0, b = 0.00778198, m = 0.00389099
+Iteration 8: a = 0.00390625, b = 0.00778198, m = 0.00584412
+Iteration 9: a = 0.00585938, b = 0.00778198, m = 0.00682068
+Iteration 10: a = 0.00585938, b = 0.00680542, m = 0.0063324
+Iteration 11: a = 0.00634766, b = 0.00680542, m = 0.00657654
+Iteration 12: a = 0.0065918, b = 0.00680542, m = 0.00669861
+Iteration 13: a = 0.00671387, b = 0.00680542, m = 0.00675964
+Iteration 14: a = 0.00671387, b = 0.00674438, m = 0.00672913
+Median found: 0.00671387
+Stopped timer 40 at 454.731 (2305.84 MB, 39668 rounds)
+Significant amount of unused triples of SPDZ gfp distorting the benchmark. This protocol has a large minimum batch size, which makes this unavoidable for small programs.
+The following benchmarks are including preprocessing (offline phase).
+Time = 25354.8 seconds
+Time1 = 24172 seconds (212.565 MB, 1558 rounds)
+Time10 = 138.487 seconds (189.639 MB, 1392 rounds)
+Time20 = 589.412 seconds (4464.05 MB, 21460 rounds)
+Time30 = 0.139922 seconds (0.00308 MB, 18 rounds)
+Time40 = 454.731 seconds (2305.84 MB, 39668 rounds)
+Data sent = 7172.1 MB in ~64097 rounds (party 0 only; use '-v' for more details)
+Global data sent = 54672.6 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+        program.use_edabit(True)
+ Done: bench_trip_m-8-100000-10
+

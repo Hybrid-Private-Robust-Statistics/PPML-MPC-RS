@@ -1,0 +1,113 @@
+------------------------ N=100000 -------------------------
+
+d=10
+Input Commitment Time (s): 3.216485
+Input Update Time (s): 24.905684
+num of entries: 50000
+Participation Set Update Time (s): 0.001330
+
+Input Commitment Time (s): 3.527688
+Input Update Time (s): 24.932041
+Participation Set Update Time (s): 0.097104
+
+
+d=25
+Input Commitment Time (s): 3.517862
+Input Update Time (s): 69.625418
+num of entries: 50000
+Participation Set Update Time (s): 0.001924
+
+
+Input Commitment Time (s): 3.740039
+Input Update Time (s): 67.981955
+Participation Set Update Time (s): 0.106842
+
+
+d=50
+Input Commitment Time (s): 4.041878
+Input Update Time (s): 161.069858
+num of entries: 50000
+Participation Set Update Time (s): 0.001346
+
+Input Commitment Time (s): 4.241022
+Input Update Time (s): 158.425696
+Participation Set Update Time (s): 0.100662
+
+d=100
+Input Commitment Time (s): 5.150838
+Input Update Time (s): 407.228112
+num of entries: 50000
+Participation Set Update Time (s): 0.123242
+
+Input Commitment Time (s): 4.943421
+Input Update Time (s): 409.985258
+Participation Set Update Time (s): 0.001282
+
+------------------------ D=10 -------------------------
+
+n=10000
+Input Commitment Time (s): 0.480126
+Input Commitment Time (s): 0.328664
+Input Update Time (s): 2.813572
+Input Update Time (s): 2.608217
+num of entries: 5000
+Participation Set Update Time (s): 0.095464
+Participation Set Update Time (s): 0.000134
+
+n=100000
+Input Commitment Time (s): 3.521806
+Input Commitment Time (s): 3.211637
+Input Update Time (s): 24.683679
+Input Update Time (s): 24.724864
+num of entries: 50000
+Participation Set Update Time (s): 0.119404
+Participation Set Update Time (s): 0.001290
+
+n=10000000
+Input Commitment Time (s): 34.248002
+Input Commitment Time (s): 33.682053
+Input Update Time (s): 247.024195
+Input Update Time (s): 249.810241
+num of entries: 500000
+Participation Set Update Time (s): 0.226242
+Participation Set Update Time (s): 0.013882
+ Done:
+
+ ------------------------N = 10000-----------------------------
+
+d = 10
+Input Commitment Time (s): 0.490053
+Input Commitment Time (s): 0.320825
+Input Update Time (s): 2.657005
+Input Update Time (s): 2.855606
+num of entries: 5000
+Participation Set Update Time (s): 0.090890
+Participation Set Update Time (s): 0.000134
+
+d = 25
+Input Commitment Time (s): 0.499403
+Input Commitment Time (s): 0.332404
+Input Update Time (s): 7.068093
+Input Update Time (s): 6.993834
+num of entries: 5000
+Participation Set Update Time (s): 0.097270
+Participation Set Update Time (s): 0.000134
+
+d=50
+Input Commitment Time (s): 0.592252
+Input Commitment Time (s): 0.349377
+Input Update Time (s): 16.367179
+Input Update Time (s): 16.377580
+num of entries: 5000
+Participation Set Update Time (s): 0.000136
+Participation Set Update Time (s): 0.094200
+
+d = 100
+Input Commitment Time (s): 0.654394
+Input Commitment Time (s): 0.425699
+Input Update Time (s): 42.834818
+Input Update Time (s): 42.739508
+num of entries: 5000
+Participation Set Update Time (s): 0.147560
+Participation Set Update Time (s): 0.000140
+

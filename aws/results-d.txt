@@ -1,0 +1,112 @@
+[linen@linen-lap aws]$ ./aws-launch-parties-trip-d.sh
+>>> Running bench_trip_d-3-100000-10
+Waiting for bench_trip_d-3-100000-10 to finish...
+Using statistical security parameter 40
+ m  =  3
+n = 33333
+d = 10
+Starting timer 1 at 0 (0 MB, 0 rounds) after 2.4222e-05
+Stopped timer 1 at 70.5467 (156.145 MB, 722 rounds)
+Starting timer 10 at 0 (0 MB, 0 rounds) after 1.897e-06
+Stopped timer 10 at 60.7757 (136.726 MB, 629 rounds)
+Starting timer 20 at 0 (0 MB, 0 rounds) after 4.27e-06
+Stopped timer 20 at 111.38 (635.213 MB, 2952 rounds)
+Starting timer 30 at 0 (0 MB, 0 rounds) after 3.28e-06
+Stopped timer 30 at 0.139489 (0.00088 MB, 8 rounds)
+Significant amount of unused triples of SPDZ gfp distorting the benchmark. This protocol has a large minimum batch size, which makes this unavoidable for small programs.
+The following benchmarks are including preprocessing (offline phase).
+Time = 242.863 seconds
+Time1 = 70.5467 seconds (156.145 MB, 722 rounds)
+Time10 = 60.7757 seconds (136.726 MB, 629 rounds)
+Time20 = 111.38 seconds (635.213 MB, 2952 rounds)
+Time30 = 0.139489 seconds (0.00088 MB, 8 rounds)
+Data sent = 928.085 MB in ~4312 rounds (party 0 only; use '-v' for more details)
+Global data sent = 2748.34 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+        program.use_edabit(True)
+ Done: bench_trip_d-3-100000-10
+
+>>> Running bench_trip_d-3-100000-25
+Waiting for bench_trip_d-3-100000-25 to finish...
+Using statistical security parameter 40
+ m  =  3
+n = 33333
+d = 25
+Starting timer 1 at 0 (0 MB, 0 rounds) after 3.751e-05
+Stopped timer 1 at 165.151 (361.204 MB, 1652 rounds)
+Starting timer 10 at 0 (0 MB, 0 rounds) after 1.596e-06
+Stopped timer 10 at 153.798 (347.655 MB, 1590 rounds)
+Starting timer 20 at 0 (0 MB, 0 rounds) after 4.612e-06
+Stopped timer 20 at 226.01 (1277.04 MB, 6200 rounds)
+Starting timer 30 at 0 (0 MB, 0 rounds) after 2.217e-06
+Stopped timer 30 at 0.139262 (0.00184 MB, 8 rounds)
+Significant amount of unused triples of SPDZ gfp distorting the benchmark. This protocol has a large minimum batch size, which makes this unavoidable for small programs.
+The following benchmarks are including preprocessing (offline phase).
+Time = 545.157 seconds
+Time1 = 165.151 seconds (361.204 MB, 1652 rounds)
+Time10 = 153.798 seconds (347.655 MB, 1590 rounds)
+Time20 = 226.01 seconds (1277.04 MB, 6200 rounds)
+Time30 = 0.139262 seconds (0.00184 MB, 8 rounds)
+Data sent = 1985.9 MB in ~9451 rounds (party 0 only; use '-v' for more details)
+Global data sent = 5879.26 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+        program.use_edabit(True)
+ Done: bench_trip_d-3-100000-25
+
+>>> Running bench_trip_d-3-100000-50
+Waiting for bench_trip_d-3-100000-50 to finish...
+Using statistical security parameter 40
+ m  =  3
+n = 33333
+d = 50
+Starting timer 1 at 0 (0 MB, 0 rounds) after 2.3093e-05
+Stopped timer 1 at 314.261 (708.738 MB, 3233 rounds)
+Starting timer 10 at 0 (0 MB, 0 rounds) after 1.612e-06
+Stopped timer 10 at 307.386 (695.55 MB, 3171 rounds)
+Starting timer 20 at 0 (0 MB, 0 rounds) after 3.83e-06
+./aws-launch-parties-trip-m.sh
+Stopped timer 20 at 351.394 (1936.05 MB, 10172 rounds)
+Starting timer 30 at 0 (0 MB, 0 rounds) after 2.56e-06
+Stopped timer 30 at 0.138758 (0.00344 MB, 8 rounds)
+Significant amount of unused triples of SPDZ gfp distorting the benchmark. This protocol has a large minimum batch size, which makes this unavoidable for small programs.
+The following benchmarks are including preprocessing (offline phase).
+Time = 973.262 seconds
+Time1 = 314.261 seconds (708.738 MB, 3233 rounds)
+Time10 = 307.386 seconds (695.55 MB, 3171 rounds)
+Time20 = 351.394 seconds (1936.05 MB, 10172 rounds)
+Time30 = 0.138758 seconds (0.00344 MB, 8 rounds)
+Data sent = 3340.34 MB in ~16585 rounds (party 0 only; use '-v' for more details)
+Global data sent = 9882.87 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+        program.use_edabit(True)
+ Done: bench_trip_d-3-100000-50
+
+>>> Running bench_trip_d-3-100000-100
+Waiting for bench_trip_d-3-100000-100 to finish...
+Using statistical security parameter 40
+ m  =  3
+n = 33333
+d = 100
+Starting timer 1 at 0 (0 MB, 0 rounds) after 2.6196e-05
+Stopped timer 1 at 620.391 (1403.81 MB, 6395 rounds)
+Starting timer 10 at 0 (0 MB, 0 rounds) after 2.243e-06
+Stopped timer 10 at 617.698 (1397.83 MB, 6364 rounds)
+Starting timer 20 at 0 (0 MB, 0 rounds) after 5.028e-06
+Stopped timer 20 at 922.014 (5165.75 MB, 26364 rounds)
+Starting timer 30 at 0 (0 MB, 0 rounds) after 2.84e-06
+Stopped timer 30 at 0.139465 (0.00664 MB, 8 rounds)
+The following benchmarks are including preprocessing (offline phase).
+Time = 2160.44 seconds
+Time1 = 620.391 seconds (1403.81 MB, 6395 rounds)
+Time10 = 617.698 seconds (1397.83 MB, 6364 rounds)
+Time20 = 922.014 seconds (5165.75 MB, 26364 rounds)
+Time30 = 0.139465 seconds (0.00664 MB, 8 rounds)
+Data sent = 7967.39 MB in ~39132 rounds (party 0 only; use '-v' for more details)
+Global data sent = 23530.8 MB (all parties)
+This program might benefit from some protocol options.
+Consider adding the following at the beginning of your code:
+        program.use_edabit(True)
+ Done: bench_trip_d-3-100000-100

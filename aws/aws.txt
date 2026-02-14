@@ -1,0 +1,43 @@
+SIGN-IN:
+
+signin link: https://[account_number].signin.aws.amazon.com/console
+username: [name]
+ec2 instance link:  https://console.aws.amazon.com/ec2/
+
+
+CREATE A NEW INSTANCE:
+1. Create a new VPC
+2. Enable DNS hostnames in the options
+3. create an internet gateway for the vpc
+4. add route 0.0.0.0/0 in the route table using the internet gateway option created above to be able to connect from my laptop with ssh
+
+
+CONNECT TO AN INSTANCE:
+general rule west: ssh -i "test-west.pem" ubuntu@<PublicDNS>
+general rule east: ssh -i "test-east.pem" ubuntu@<PublicDNS>
+
+
+COMMUNICATION BETWEEN INSTANCES:
+set-up vpc peer communication between instances in different regions.
+allow inside the security group of one instance the tcp traffic from the security group including the private ip of the other instance.
+
+MP-SPDZ:
+The file containing the ip addresses (e.g. ip-partiex.txt) in the MP-SPDZ library should be of this format (NO comments, no spaces, no tabs) where this ip is the private ip of the AWS instance:
+e.g.
+ip-172-31-48-245
+ip-172-31-50-147
+ip-172-32-2-145
+ip-172-32-9-183
+
+
+Automatically connect to multiple aws instances through my terminal:
+
+Add configurations in ~/.ssh/config specifying aliases for each aws instance (after assigning static ips to aws instances).
+for example:
+# west-1 instance
+Host party0
+    HostName ec2-54-184-63-122.us-west-2.compute.amazonaws.com
+    User ubuntu
+    IdentityFile /home/linen/Desktop/test-jrs-west.pem
+
+Then just call ./aws-git-sync-parties.sh which launches all 10 AWS instances and syncs with the github PPML-MP-SPDZ.
