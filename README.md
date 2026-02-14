@@ -8,6 +8,8 @@ In aws/aws.txt one can find instructions on how to set up AWS EC instances for o
 
 In aws/mpc one can find the scripts to run our benchmarks.
 
+Below we will describe the main logic behind the scripts
+
 This simulation is a fork from [MP-SPDZ](https://github.com/data61/MP-SPDZ).
 For more information check [The official documentation](https://mp-spdz.readthedocs.io/en/latest).
 
@@ -34,22 +36,13 @@ We recomment having access to 10 different machines to simulate the communicatio
    for more information.
 If the benchmarks are run locally skip to 'Local Simulation'
 
-### Running bench_fhe
-
-1.  Edit  `CONFIG.mine` to run for larger fields:
-```
-echo "MOD = -DGFP_MOD_SZ=5" >> CONFIG.mine
-```
 
 2. Execute the following for the underlying setup and sharing mechanism:
 
 ```
 make setup
-./Scripts/setup-ssl.sh 10
-make -j8 sy-shamir-party.x
+make -j8 lowgear-party.x
 ```
-Setup-ssl will create the necessary keys for each party. 
-The easiest way for benchmarks in multiple machines is to copy all Pi.pem , Pi.key to all machines.
 
 3. Compile the program to obtain the executable for each party:
    ```
@@ -59,21 +52,10 @@ The easiest way for benchmarks in multiple machines is to copy all Pi.pem , Pi.k
     ```
     ./launch-parties.sh
     ```
-### Running bench_fhe_naive
-
-1. Compile the program to obtain the executable for each party:
-   ```
-   ./compile-parties-comp.sh
-   ```
-2. Run the program to obtain the results as:
-    ```
-    ./launch-parties-comp.sh
-    ```       
+   
    
 
-### Local Simulation
-
-
+### Local Simulation (not recommended)
 
 
 #### Requirements
@@ -92,71 +74,11 @@ The easiest way for benchmarks in multiple machines is to copy all Pi.pem , Pi.k
    Apple Silicon)
  - Python 3.5 or later
 
+#### Execution
 
-#### Further documentation
-1. Separate compilation and execution. This is the default in the
-   further documentation. It allows to run the same program several
-   times while only compiling once, for example:
-
-   ```
-   ./compile.py <program> <argument>
-   Scripts/mascot.sh <program>-<argument> [<runtime-arg>...]
-   Scripts/mascot.sh <program>-<argument> [<runtime-arg>...]
-   ```
-
-3. One-command remote execution. This compiles the program and the
-   virtual machine if necessary before uploading them together with
-   all necessary input and certificate files via SSH.
-
-   ```
-   Scripts/compile-run.py -H HOSTS -E mascot <program> <argument> -- [<runtime-arg>...]
-   ```
-
-   `HOSTS` has to be a text file in the following format:
-
-   ```
-   [<user>@]<host0>[/<path>]
-   [<user>@]<host1>[/<path>]
-   ...
-   ```
-
-   If <path> does not start with `/` (only one `/` after the
-   hostname), the path will be relative to the home directory of the
-   user. Otherwise (`//` after the hostname it will be relative to the
-   root directory.
-
-
-   Adding the compiler option `-t` (`--tidy_output`) groups the output prints by
-   party; however, it delays the outputs until the execution is finished.
-
-
- 4. Programs can also be edited, compiled and run from any directory with
-    the above basic structure. So for a source file in
-    `./Programs/Source/`, all MP-SPDZ scripts must be run from `./`. Any
-    setup scripts such as `setup-ssl.sh` script must also be run from `./`
-    to create the relevant data. For example:
+    - First compile the virtual machine:
     
-    ```
-    MP-SPDZ$ cd ../
-    $ mkdir myprogs
-    $ cd myprogs
-    $ mkdir -p Programs/Source
-    $ vi Programs/Source/test.mpc
-    $ ../MP-SPDZ/compile.py test.mpc
-    $ ls Programs/
-    Bytecode  Public-Input  Schedules  Source
-    $ ../MP-SPDZ/Scripts/setup-ssl.sh
-    $ ls
-    Player-Data Programs
-    $ ../MP-SPDZ/Scripts/rep-field.sh test
-    ```
-
-
-    5. General instructions
-
-    First compile the virtual machine:
-    
-    `make -j8 mascot-party.x`
+    `make -j8 lowgear-party.x`
     
     and a high-level program, for example the tutorial (use `-R 64` for
     SPDZ2k and Semi2k and `-B <precision>` for SemiBin):
@@ -165,69 +87,10 @@ The easiest way for benchmarks in multiple machines is to copy all Pi.pem , Pi.k
     
     To run the tutorial with two parties on one machine, run:
     
-    `./mascot-party.x -N 2 -I -p 0 tutorial`
+    `./lowgear-party.x -N 2 -I -p 0 bench_trip`
     
-    `./mascot-party.x -N 2 -I -p 1 tutorial` (in a separate terminal)
-    
-    Using `-I` activates interactive mode, which means that inputs are
-    solicited from standard input, and outputs are given to any
-    party. Omitting `-I` leads to inputs being read from
-    `Player-Data/Input-P<party number>-0` in text format.
-    
-    Or, you can use a script to do run two parties in non-interactive mode
-    automatically:
-    
-    `Scripts/mascot.sh tutorial`
-    
-    To run a program on two different machines, `mascot-party.x`
-    needs to be passed the machine where the first party is running,
-    e.g. if this machine is name `diffie` on the local network:
-    
-    `./mascot-party.x -N 2 -h diffie 0 tutorial`
-    
-    `./mascot-party.x -N 2 -h diffie 1 tutorial`
-    
-    The software uses TCP ports around 5000 by default, use the `-pn`
-    argument to change that.
+    `./lowgear-party.x -N 2 -I -p 1 bench_trip` (in a separate terminal)
 
-
-    6. MP-SPDZ uses OpenSSL for secure channels. You can generate the
-        necessary certificates and keys as follows:
-        
-        `Scripts/setup-ssl.sh [<number of parties> <ssl_dir>]`
-        
-        The programs expect the keys and certificates to be in
-        `SSL_DIR/P<i>.key` and `SSL_DIR/P<i>.pem`, respectively, and
-        the certificates to have the common name `P<i>` for player
-        `<i>`. Furthermore, the relevant root certificates have to be in
-        `SSL_DIR` such that OpenSSL can find them (run `c_rehash
-        <ssl_dir>`). The script above takes care of all this by generating
-        self-signed certificates. Therefore, if you are running the programs
-        on different hosts you will need to copy the certificate files.
-        Note that `<ssl_dir>` must match `SSL_DIR` set in `CONFIG` or `CONFIG.mine`.
-        Just like `SSL_DIR`, `<ssl_dir>` defaults to `Player-Data`.
-        
-        
-
-
-
-
-## Online-only benchmarking
-
-In this section we show how to benchmark purely the data-dependent
-(often called online) phase of some protocols. This requires to
-generate the output of a previous phase. There are two options to do
-that:
-1. For select protocols, you can run [preprocessing as
-   required](#preprocessing-as-required).
-2. You can run insecure preprocessing. For this, you will have to
-   (re)compile the software after adding `MY_CFLAGS = -DINSECURE` to
-   `CONFIG.mine` in order to run this insecure generation.
-   Make sure to run `make clean` before recompiling any binaries.
-   Then, you need to run `make Fake-Offline.x <protocol>-party.x`.
-
-Note that you can as well run the full protocol with option `-v` to
-see the cost split by preprocessing and online phase.
 
 ### SPDZ
 
