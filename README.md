@@ -1,3 +1,12 @@
+## Use of MP-SPDZ in our protocol: 
+MP-SPDZ operates using the online-offline paradigm. The offline phase is independent of the input but depends on the input size and the number of parties. The online phase operates faster using  the precomputed values from the offline phase. Since the precomputed values cannot be reused across multiple online phases, in our experiments the reported timings include both the online and offline phase. 
+Among the different offline protocols that the MP-SPDZ library provides, we choose Overdrive \cite{keller_overdrive_2018} because it offers malicious security and performs slightly better than other schemes in our setting, e.g., MASCOT  \cite{keller_mascot_2016}, which does not support Beaver
+\emph{matrix} multiplication triples and therefore incurs higher costs for the matrix-heavy computations required by our protocol. Overdrive uses authenticated secret sharing with SPDZ-style MACs to ensure privacy and correctness of all computations. 
+
+## Overhead
+In MP-SPDZ, we implement and measure the overhead from matrix multiplications on secret-shared values (needed in the ADMM model update), the secure sharing of private values among multiple parties, the secure protocol to compute the $q$-th quantile of the joint dataset, and the DP noise sampling.
+
+
 The main simulation code for our protocol is contained in Programs/Source/trip_*.py.
 The simulation code for the comparison with Naive MPC is contained in Programs/Source/bench_trip_mpc_proofs.py.
 This is a software to benchmark  secure multi-party computation (MPC)
