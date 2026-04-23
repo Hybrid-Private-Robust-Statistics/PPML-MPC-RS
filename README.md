@@ -13,6 +13,7 @@ This is a software to benchmark  secure multi-party computation (MPC)
 of input sharing, matrix multiplications and q-rank in the dishonest majority setting,
 with malicious/active corruption.
 
+## AWS execution
 In aws/aws.txt one can find instructions on how to set up AWS EC instances for our setting.
 
 In aws/mpc one can find the scripts to run our benchmarks.
