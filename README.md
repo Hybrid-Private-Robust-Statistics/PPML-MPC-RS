@@ -90,10 +90,8 @@ make -j8 lowgear-party.x
     
     `make -j8 lowgear-party.x`
     
-    and a high-level program, for example the tutorial (use `-R 64` for
-    SPDZ2k and Semi2k and `-B <precision>` for SemiBin):
-    
-    `./compile.py -F 64 tutorial`
+    and the high-level program
+    `./compile.py -F 64 bench_trip`
     
     To run the tutorial with two parties on one machine, run:
     
